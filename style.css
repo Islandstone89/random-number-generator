@@ -1,0 +1,85 @@
+
+:root {
+    --clr-dark-blue: hsl(240, 86%, 34%);
+    --clr-dark-red: hsl(0, 90%, 27%);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-black: hsl(0, 39%, 6%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+button, input {
+    font: inherit;
+    color: inherit;
+}
+
+.flow {
+    --flow-space: 64px;
+}
+
+.flow > * + * {
+    margin-block-start: var(--flow-space, 1em);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    min-height: 100svh;
+    text-align: center;
+    background-color: var(--clr-black);
+    color: var(--clr-white);
+}
+
+.main {
+    width: min(100 - 4rem, 800px);
+    padding-block: 50px;
+}
+
+.number {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    border: transparent;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 20px;
+    padding: 1em 2em;
+    cursor: pointer;
+    transition: 250ms ease-in-out;
+}
+
+.btn-generate {
+    --flow-space: 40px;
+    --btn-bg: var(--clr-dark-blue);
+    --btn-color: var(--clr-white);
+    background-color: var(--btn-bg);
+    color: var(--btn-color);
+
+    &:is(:hover, :focus-visible) {
+        --btn-bg: var(--clr-white);
+        --btn-color: var(--clr-dark-blue);
+    }
+}
+
+.btn-reset {
+    --flow-space: 20px;
+    --btn-bg: var(--clr-dark-red);
+    --btn-color: var(--clr-white);
+    background-color: var(--btn-bg);
+    color: var(--btn-color);
+
+    &:is(:hover, :focus-visible) {
+        --btn-bg: var(--clr-white);
+        --btn-color: var(--clr-dark-red);
+    }
+}
